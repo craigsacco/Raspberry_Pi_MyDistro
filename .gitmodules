@@ -7,3 +7,6 @@
 [submodule "modules/raspberrypi.org/tools"]
 	path = modules/raspberrypi.org/tools
 	url = https://github.com/raspberrypi/tools.git
+[submodule "modules/raspberrypi.org/firmware"]
+	path = modules/raspberrypi.org/firmware
+	url = https://github.com/raspberrypi/firmware.git
