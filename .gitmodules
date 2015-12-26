@@ -4,3 +4,6 @@
 [submodule "modules/kernel.org/linux"]
 	path = modules/kernel.org/linux
 	url = git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+[submodule "modules/raspberrypi.org/tools"]
+	path = modules/raspberrypi.org/tools
+	url = https://github.com/raspberrypi/tools.git
