@@ -1,0 +1,5 @@
+proc            /proc   proc    defaults                        0       0
+/dev/mmcblk0p1  /boot   vfat    defaults                        0       0
+/dev/mmcblk0p2  /       ext4    defaults                        0       0
+/dev/mmcblk0p3  /data   vfat    defaults,uid=65534,gid=65534    0       0
+
