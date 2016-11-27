@@ -13,8 +13,14 @@ Using Debian Stretch with the following packages:
 * gnu-arm-linux-gnueabihf
 * libncurses5-dev
 * bc
+* kpartx
 
 # Process
+
+## Setting up base Raspbian system
+```
+./create-rootfs.sh
+```
 
 ## Building a Raspberry Pi kernel image (kernel.img)
 ```
@@ -26,7 +32,7 @@ Using Debian Stretch with the following packages:
 ./build-kernel7.sh
 ```
 
-## Install kernels to bootfs/rootfs
+## Create bootfs and install kernels
 ```
 ./install-kernels.sh
 ```
