@@ -1,12 +1,9 @@
-[submodule "modules/raspberrypi.org/linux"]
-	path = modules/raspberrypi.org/linux
+[submodule "modules/linux"]
+	path = modules/linux
 	url = https://github.com/raspberrypi/linux.git
-[submodule "modules/kernel.org/linux"]
-	path = modules/kernel.org/linux
-	url = git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-[submodule "modules/raspberrypi.org/tools"]
-	path = modules/raspberrypi.org/tools
+[submodule "modules/tools"]
+	path = modules/tools
 	url = https://github.com/raspberrypi/tools.git
-[submodule "modules/raspberrypi.org/firmware"]
-	path = modules/raspberrypi.org/firmware
+[submodule "modules/firmware"]
+	path = modules/firmware
 	url = https://github.com/raspberrypi/firmware.git
