@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# unmount all filesystems on the SD card
+# unmount all mounted filesystems on the SD card
 SDCARD=$1
-sudo umount /dev/${SDCARD}*
+mount | grep /dev/${SDCARD} | cut -d " " -f 1 | xargs sudo umount
 
 # create the partition layout and make it available to the OS
 sudo SDCARD=${SDCARD} sh -c 'echo "o
@@ -31,16 +31,16 @@ w
 sudo kpartx -v -f -a /dev/${SDCARD}
 
 # create new filesystems on the SD card
-sudo mkfs.vfat /dev/mapper/${SDCARD}1
-sudo mkfs.ext4 /dev/mapper/${SDCARD}2
-sudo mkfs.vfat /dev/mapper/${SDCARD}3
+sudo mkfs.vfat /dev/${SDCARD}1
+sudo mkfs.ext4 /dev/${SDCARD}2
+sudo mkfs.vfat /dev/${SDCARD}3
 
 # copy files to the SD card
-sudo mount -t vfat /dev/mapper/${SDCARD}1 /mnt
+sudo mount -t vfat /dev/${SDCARD}1 /mnt
 sudo rm -rf /mnt/*
 sudo cp -av bootfs/* /mnt
 sudo umount /mnt
-sudo mount -t ext4 /dev/mapper/${SDCARD}2 /mnt
+sudo mount -t ext4 /dev/${SDCARD}2 /mnt
 sudo rm -rf /mnt/*
 sudo mkdir -p /mnt/lost+found
 sudo cp -av rootfs/* /mnt

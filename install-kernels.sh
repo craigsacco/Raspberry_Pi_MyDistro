@@ -7,7 +7,7 @@ sudo rm -rf rootfs/lib/modules
 
 # create bootfs and add bootloaders, cmdline.txt and config.txt
 sudo mkdir bootfs
-sudo cp -avt bootfs external/firmware/boot/fixup*.dat external/firmware/boot/bootcode.bin external/firmware/boot/start*.elf external/firmware/boot/LICENCE.broadcom
+sudo cp -avt bootfs modules/firmware/boot/fixup*.dat modules/firmware/boot/bootcode.bin modules/firmware/boot/start*.elf modules/firmware/boot/LICENCE.broadcom
 sudo sh -c 'sudo echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2
 " > bootfs/cmdline.txt'
 sudo sh -c 'sudo echo "gpu_mem=16
@@ -47,4 +47,5 @@ do
 done
 
 # change owner of files added to bootfs/rootfs
-sudo chmod -R root:root bootfs rootfs/lib/firmware rootfs/lib/modules
+sudo chown root:root rootfs/lib
+sudo chown -R root:root bootfs rootfs/lib/firmware rootfs/lib/modules
