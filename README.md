@@ -37,9 +37,16 @@ Using Debian Stretch with the following packages:
 ./install-kernels.sh
 ```
 
-## Create QEMU image
+## Test the distribution
+
+### Create QEMU image
 ```
 ./create-image.sh
+```
+
+### Test using QEMU
+```
+./qemu-test.sh
 ```
 
 ## Create SD card
