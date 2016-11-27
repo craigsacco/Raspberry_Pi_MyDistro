@@ -45,3 +45,6 @@ do
             ;;
     esac
 done
+
+# change owner of files added to bootfs/rootfs
+sudo chmod -R root:root bootfs rootfs/lib/firmware rootfs/lib/modules
